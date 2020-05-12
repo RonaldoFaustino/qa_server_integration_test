@@ -1,0 +1,273 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "cpf": "1234511",
+            "nome": "Rafael Teixeira",
+            "enderecos": [
+                {
+                    "codigo": 1,
+                    "complemento": "Empresa",
+                    "numero": 123.0,
+                    "logradouro": "Rua Alexandre Dumas",
+                    "bairro": "Chacara Santo Antonio",
+                    "estado": "SP",
+                    "cidade": "São Paulo"
+                }
+            ],
+            "codigo": 1,
+            "telefones": [
+                {
+                    "numero": "991288341",
+                    "ddd": "11",
+                    "codigo": 1
+                }
+            ]
+        }
+    ],
+    "required": [
+        "codigo",
+        "nome",
+        "cpf",
+        "enderecos",
+        "telefones"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "codigo": {
+            "$id": "#/properties/codigo",
+            "type": "integer",
+            "title": "The codigo schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                1
+            ]
+        },
+        "nome": {
+            "$id": "#/properties/nome",
+            "type": "string",
+            "title": "The nome schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Rafael Teixeira"
+            ]
+        },
+        "cpf": {
+            "$id": "#/properties/cpf",
+            "type": "string",
+            "title": "The cpf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "1234511"
+            ]
+        },
+        "enderecos": {
+            "$id": "#/properties/enderecos",
+            "type": "array",
+            "title": "The enderecos schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "complemento": "Empresa",
+                        "logradouro": "Rua Alexandre Dumas",
+                        "numero": 123,
+                        "bairro": "Chacara Santo Antonio",
+                        "estado": "SP",
+                        "cidade": "São Paulo",
+                        "codigo": 1
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/enderecos/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "codigo": 1,
+                                "complemento": "Empresa",
+                                "logradouro": "Rua Alexandre Dumas",
+                                "numero": 123,
+                                "bairro": "Chacara Santo Antonio",
+                                "estado": "SP",
+                                "cidade": "São Paulo"
+                            }
+                        ],
+                        "required": [
+                            "codigo",
+                            "logradouro",
+                            "numero",
+                            "complemento",
+                            "bairro",
+                            "cidade",
+                            "estado"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "codigo": {
+                                "$id": "#/properties/enderecos/items/anyOf/0/properties/codigo",
+                                "type": "integer",
+                                "title": "The codigo schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "logradouro": {
+                                "$id": "#/properties/enderecos/items/anyOf/0/properties/logradouro",
+                                "type": "string",
+                                "title": "The logradouro schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Rua Alexandre Dumas"
+                                ]
+                            },
+                            "numero": {
+                                "$id": "#/properties/enderecos/items/anyOf/0/properties/numero",
+                                "type": "integer",
+                                "title": "The numero schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    122
+                                ]
+                            },
+                            "complemento": {
+                                "$id": "#/properties/enderecos/items/anyOf/0/properties/complemento",
+                                "type": "string",
+                                "title": "The complemento schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Empresa"
+                                ]
+                            },
+                            "bairro": {
+                                "$id": "#/properties/enderecos/items/anyOf/0/properties/bairro",
+                                "type": "string",
+                                "title": "The bairro schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Chacara Santo Antonio"
+                                ]
+                            },
+                            "cidade": {
+                                "$id": "#/properties/enderecos/items/anyOf/0/properties/cidade",
+                                "type": "string",
+                                "title": "The cidade schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "São Paulo"
+                                ]
+                            },
+                            "estado": {
+                                "$id": "#/properties/enderecos/items/anyOf/0/properties/estado",
+                                "type": "string",
+                                "title": "The estado schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "SP"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/enderecos/items"
+            }
+        },
+        "telefones": {
+            "$id": "#/properties/telefones",
+            "type": "array",
+            "title": "The telefones schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "numero": "991288341",
+                        "ddd": "11",
+                        "codigo": 1
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/telefones/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "numero": "991288341",
+                                "ddd": "11",
+                                "codigo": 1
+                            }
+                        ],
+                        "required": [
+                            "codigo",
+                            "ddd",
+                            "numero"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "codigo": {
+                                "$id": "#/properties/telefones/items/anyOf/0/properties/codigo",
+                                "type": "integer",
+                                "title": "The codigo schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0.0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "ddd": {
+                                "$id": "#/properties/telefones/items/anyOf/0/properties/ddd",
+                                "type": "string",
+                                "title": "The ddd schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "11"
+                                ]
+                            },
+                            "numero": {
+                                "$id": "#/properties/telefones/items/anyOf/0/properties/numero",
+                                "type": "string",
+                                "title": "The numero schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "991288341"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/telefones/items"
+            }
+        }
+    }
+}
