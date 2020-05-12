@@ -1,7 +1,7 @@
 ## Pré condições 
 - Maven / Java 8
 
-## Usage
+## Iniciando
 
 ```
      mvn clean install 
@@ -10,7 +10,7 @@
 ## Relatório de testes
    .\output\extent-report\index.html
    
-## bugs
+## Bugs
 
 1. EndPoint GET PESSOA incorreto na descrição da documentação do desafio 
 	*  documentação   > localhost:8080/{ddd}/{numero}
